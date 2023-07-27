@@ -163,7 +163,7 @@ const Frame = ({
               <Button
                 size="large"
                 type="link"
-                className={`${styles.FrameButton}`}
+                className={styles.FrameButton}
                 onClick={() => onRefresh()}
                 title="Refresh"
               >
@@ -187,7 +187,7 @@ const Frame = ({
           <Button
             size="large"
             type="link"
-            className={`${styles.FrameButton}`}
+            className={styles.FrameButton}
             onClick={() => setExpand(!isExpand)}
             title={isExpand ? 'Hide' : 'Show'}
           >
@@ -199,7 +199,7 @@ const Frame = ({
           <Button
             size="large"
             type="link"
-            className={`${styles.FrameButton}`}
+            className={styles.FrameButton}
             onClick={() => {
               if (window.confirm('Are you sure you want to close this window?')) {
                 dispatch(removeFrame(refKey));

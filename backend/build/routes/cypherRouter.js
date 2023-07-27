@@ -1,3 +1,5 @@
+"use strict";
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,42 +19,24 @@
  * under the License.
  */
 
-.App {
-  text-align: center;
-}
+var express = require("express");
+var CypherController = require("../controllers/cypherController");
+var multer = require('multer');
+var storage = multer.memoryStorage();
+var upload = multer({
+  storage: storage
+});
+var router = express.Router();
+var cypherController = new CypherController();
+var _require = require('../common/Routes'),
+  wrap = _require.wrap;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+// Execute Cypher Query
+router.post("/", wrap(cypherController.executeCypher));
+router.post("/init", upload.fields([{
+  name: "edges"
+}, {
+  name: "nodes"
+}]), wrap(cypherController.createGraph));
+module.exports = router;
+//# sourceMappingURL=cypherRouter.js.map

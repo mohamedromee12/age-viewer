@@ -24,6 +24,65 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.ant-col.ant-col-18 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ServerConnectFrame_FrameWrapper__3STas {
+  width: 100%;
+  max-width: 100%;
+}
+
+button.ant-btn.ant-btn-primary {
+  float: right;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.ant-row {
+  flex-direction: column;
+}
+
+.ant-col.ant-col-6 {
+  max-width: 100%;
+}
+
+.ant-col-18 {
+  max-width: 100%;
+}
+
+@media (max-width: 1130px) {
+  .sidebar-home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-group.input-style {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#editor-buttons {
+  margin-left: 0 !important;
+}
+
+div#codeMirrorEditor {
+  width: 100%;
+}
+
+.Frame_FrameHeaderText__1nEHG {
+  display: flex;
+  justify-content: start;
+}
+}
+
+svg#Frame_toEditor__AD3KA {
+  margin-left: 10px;
 }
